@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리n자바스크립트</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" type="text/javascript"></script>   
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // h1에 글자크기40px와 글자색상 white로 스타일을 지정하시오
+
+            // 첫번째 li에 클래스current를 붙이시오
+            $(".gnb li:nth-child(1)").addClass("current");
+            
+            //li를 클릭하면 실행하시오
+            $(".gnb li").click(function(){
+                //클릭한 대상에 클래스current를 붙이시오
+                $(this).addClass("current"); //this는 클릭한 li
+                //클릭한 대상을 제외한 나머지 형제요소의 클래스를 없애라
+                $(this).siblings().removeClass("current");//siblings()는 앞요소를 제외한 나머지 형제요소들
+            });
+
+            //aside의 button을 클릭하면 실행하시오
+              $("aside button").click(function(){
+                $("aside").toggleClass("asideshow");
+                //클릭한 버튼에 클래스buttonreverse를 toogle로 붙이시오
+                $(this).toggleClass("buttonreverse");
+              });
+            //enb의 첫번째 li클릭하면 실행하시오(body에 클래스를 붙이시오(ju)) 
+            //enb의 두번째 li클릭하면 실행하시오(body에 대상에 클래스를 붙이시오(ya)) 
+            //---- 기초예제 4-2번 참조
+            $(".enb li:nth-child(1) a").click(function(){
+                $("body main").addClass("ju");
+                $("body main").removeClass("ya");
+                return false;
+            });
+
+            $(".enb li:nth-child(2) a").click(function(){
+                $("body main").addClass("ya");
+                $("body main").removeClass("ju");
+                return false;
+            });
+            // 대메뉴클릭시 페이지슬라이딩
+            $("header div.wrap ul.gnb li:nth-child(1) a").click(function(){
+                $("html,body").animate({scrollTop:800},1500);
+                //scrollTop은 스크롤바의 윗부분 / 2000 위치  / 1500 1.5초
+            });
+            $("header div.wrap ul.gnb li:nth-child(2) a").click(function(){
+                $("html,body").animate({scrollTop:1727},1500);
+                //scrollTop은 스크롤바의 윗부분 / 2000 위치  / 1500 1.5초
+            });
+            $("header div.wrap ul.gnb li:nth-child(3) a").click(function(){
+                $("html,body").animate({scrollTop:2654},1500);
+                //scrollTop은 스크롤바의 윗부분 / 2000 위치  / 1500 1.5초
+            });
+            // 탑버튼클릭시 페이지슬라이딩(평가)
+            $("footer a.top").click(function(){
+                $("html,body").animate({scrollTop:0},1500);
+                // return false;
+            });
+            //basic의 p를 감추시오 hide();
+            $("main #basic .wrap article ul.list li a p").hide();
+            //basic의 h3를 클릭하면 실행하시오
+            $("main #basic .wrap article ul.list li a h3").click(function(){
+                $(this).next().slideToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1>제이쿼리n자바스크립트</h1>
+            <ul class="gnb">
+                <li><a href="#basic">제이쿼리기초</a></li>
+                <li><a href="#middle">제이쿼리 중급예제</a></li>
+                <li><a href="#use">제이쿼리 활용예제</a></li>
+            </ul>
+            <ul class="enb">
+                <li><a href="">주간모드</a></li>
+                <li><a href="">야간모드</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="title">
+        
+    </div>
+    <main>
+        <section id="basic">
+            <div class="wrap padding50">
+                <article class="flex flex-column flex-align-center">
+                    <h2 class="h2">제이쿼리기초</h2>
+                    <p class="p">제이쿼리기초메서드</p>
+                    <ul class="list">
+                        <li>
+                            <a href="">
+                                <h3 class="h3">append()</h3>
+                                <p class="p">선택한 요소의 마지막에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">prepend()</h3>
+                                <p class="p">선택한 요소의 처음에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">appendTo()</h3>
+                                <p class="p">선택한 요소를 해당 요소의 마지막에 삽입함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">prependTo()</h3>
+                                <p class="p">선택한 요소를 해당 요소의 처음에 삽입함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">before()</h3>
+                                <p class="p">선택한 요소의 바로 앞에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">after()</h3>
+                                <p class="p">선택한 요소의 바로 뒤에 새로운 요소나 콘텐츠를 추가함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">insertBefore()</h3>
+                                <p class="p">선택한 요소를 해당 요소의 앞에 삽입함.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <h3 class="h3">insertAfter()</h3>
+                                <p class="p">선택한 요소를 해당 요소의 뒤에 삽입함.</p>
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <section id="middle">
+            <div class="wrap padding50">
+                <article class="flex flex-column flex-align-center">
+                    <h2 class="h2">제이쿼리중급</h2>
+                    <p class="p">제이쿼리중급예제입니다</p>
+                </article>
+            </div>
+        </section>
+        <section id="use">
+            <div class="wrap padding50">
+                <article class="flex flex-column flex-align-center">
+                    <h2 class="h2">제이쿼리 활용</h2>
+                    <p class="p">제이쿼리 활용예제입니다</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <aside>
+        <button>
+
+        </button>
+    </aside>
+    <footer>
+        <a href="#" class="top">맨위로 가기</a>
+    </footer>
+</body>
+</html>

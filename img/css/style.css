@@ -1,0 +1,166 @@
+body{
+  overflow-x: hidden;
+  padding-left: 200px;
+}
+.ju{
+  background-color:#efefef; 
+}
+.ya{
+  background-color:#666; 
+}
+header {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #ad1a34;
+  color: white;
+}
+header div.wrap {
+  width: auto;
+  height: 100%;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+header div.wrap h1 {
+  order: 2;
+}
+header div.wrap h1 a {
+  
+}
+header div.wrap ul.gnb {
+ order: 3;
+}
+header div.wrap ul.gnb li {
+  line-height: 1.4;
+}
+header div.wrap ul.gnb li a {
+  color: #eee;
+  font-size: 13px;
+}
+header div.wrap ul.enb {
+  order: 1;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+}
+header div.wrap ul.enb li {
+  
+}
+header div.wrap ul.enb li a {
+  
+  line-height: 1.4;
+  display: block;
+  color: white;
+}
+/* 타이틀영역 */
+#title{
+  height: 800px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #ff8888));
+  background: -moz-linear-gradient(top, #ffffff 0%, #ff8888 100%);
+  background: -webkit-linear-gradient(top, #ff0000 0%, #efefef 100%);
+  background: -o-linear-gradient(top, #ffffff 0%, #ff8888 100%);
+  background: -ms-linear-gradient(top, #ffffff 0%, #ff8888 100%);
+  background: linear-gradient(top, #ffffff 0%, #ff8888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ff8888', gradientType=0);
+}
+main {
+  height: 300%;
+  transition: all 1s;
+  background-size: cover;
+}
+main section{
+  height: calc(100% / 3);
+  border: 2px solid;
+  box-sizing: border-box;
+}
+aside {
+  position: absolute;
+  right: -170px;
+  top: 30px;
+  width: 170px;
+  min-height: 300px;
+  background-color: #f65859;
+  transition: all 1s;
+}
+aside button {
+  all: unset;
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  left: -40px;
+  background-color: #f65859;
+  background-image: url(../img/leftarrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 14px 0 0 14px;
+  cursor: pointer;
+}
+.buttonreverse{
+   background-image: url(../img/rightarrow.svg);
+}
+.current{
+  background-color: black;
+  color: white;
+}
+.current a{
+  color: white !important;
+}
+.asideshow{
+  right: 0;
+}
+/* basic */
+main #basic {
+  
+}
+main #basic .wrap {
+  
+}
+main #basic .wrap article {
+  
+}
+main #basic .wrap article h2 {
+  
+}
+main #basic .wrap article > p {
+  
+}
+main #basic .wrap article ul.list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  margin-top: 30px;
+}
+main #basic .wrap article ul.list li {
+  width: calc(100% / 2);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+main #basic .wrap article ul.list li:nth-child(2n+1){
+  border-right:1px solid #ccc;
+}
+main #basic .wrap article ul.list li a {
+  
+}
+main #basic .wrap article ul.list li a h3 {
+  background-color: #eee;
+  line-height: 1.3;
+  padding-left: 15px; 
+}
+main #basic .wrap article ul.list li a p {
+  
+}
+
+
+
+
+
+
+
+
+
+
